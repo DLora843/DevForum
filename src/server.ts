@@ -18,7 +18,7 @@ const angularApp = new AngularNodeAppEngine();
  *
  * Example:
  * ```ts
- * app.get('/api/{*splat}', (req, res) => {
+ * app.get('/api/*', (req, res) => {
  *   // Handle API request
  * });
  * ```
@@ -41,9 +41,13 @@ app.use(
 app.use((req, res, next) => {
   angularApp
     .handle(req)
-    .then((response) =>
-      response ? writeResponseToNodeResponse(response, res) : next(),
-    )
+    .then((response) => {
+    if (response) {
+    writeResponseToNodeResponse(response, res);
+    } else {
+      next();
+    }
+  })
     .catch(next);
 });
 

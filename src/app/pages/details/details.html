@@ -1,0 +1,14 @@
+<h1>Каталог на публикациите</h1>
+
+<div class="posts-container">
+  <div *ngFor="let post of posts" class="post-card">
+    <h2>{{ post.title }}</h2>
+    <p class="post-meta">Автор: {{ post.author }} | {{ post.date }}</p>
+    <p class="post-excerpt">{{ post.content }}</p>
+    <a class="view-more-btn" [routerLink]="['/details', post.id]">Виж повече</a>
+  </div>
+</div>
+
+<div *ngIf="!posts.length" class="no-posts">
+  Няма налични публикации.
+</div>

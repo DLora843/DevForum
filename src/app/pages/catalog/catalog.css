@@ -1,0 +1,41 @@
+.catalog-container {
+  max-width: 900px;
+  margin: 0;
+  padding: 20px;
+}
+
+.catalog-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.catalog-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease0;
+}
+
+.catalog-item:hover{
+  background-color: #f7f7f7;
+}
+
+.catalog-item h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #007acc;
+}
+
+.catalog-item p{
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #333;
+}
+.catalog-item small{
+  display: block;
+  margin-top: 5px;
+  color: #777;
+}

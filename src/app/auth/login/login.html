@@ -1,0 +1,41 @@
+<form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <fieldset>
+    <h2>Login Form</h2>
+
+    <!-- Email -->
+    <p class="field field-icon">
+      <label for="email"><span><i class="fas fa-envelope"></i></span></label>
+      <input
+        [class.input-error]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+        [class.input-valid]="loginForm.get('email')?.valid"
+        type="email"
+        id="email"
+        placeholder="john.doe@gmail.com"
+        formControlName="email">
+    </p>
+    @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+      <p class="error">{{ emailErrorMessage }}</p>
+    }
+
+    <!-- Password -->
+    <p class="field field-icon">
+      <label for="password"><span><i class="fas fa-lock"></i></span></label>
+      <input
+        [class.input-error]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+        [class.input-valid]="loginForm.get('password')?.valid"
+        type="password"
+        id="password"
+        placeholder="******"
+        formControlName="password">
+    </p>
+    @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+      <p class="error">{{ passwordErrorMessage }}</p>
+    }
+
+    <button [disabled]="loginForm.invalid">Login</button>
+
+    <p class="text-center">
+      Have an account? <a routerLink="/register">Register</a>
+    </p>
+  </fieldset>
+</form>
