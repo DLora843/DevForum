@@ -41,16 +41,18 @@ export class AuthService {
         email: string, 
         phone: string, 
         password: string, 
-        rePassword: string): Observable<User> {
+        repeatPassword: string): 
+        Observable<User> {
         return this.httpClient.post<ApiUser>(`${this.apiUrl}/register`, {
             username,
             email,
             tel: phone,
             password,
-            rePassword
+            repeatPassword
         }, {
             withCredentials: true
-        }).pipe(
+        })
+        .pipe(
             map(apiUser => this.mapApiUserToUser(apiUser)),
             tap(user => {
             this._currentUser.set(user);

@@ -1,2 +1,2 @@
-export * from "./authentication.interceptor";
-export * from "./error.interceptor"
+export * from "./Authentication.interceptor"
+export * from "./Error.interceptor"

@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { AuthService } from '../../core/services';
 import { Router, RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
-import { log } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -65,30 +64,28 @@ export class Login {
   }
 
   onSubmit(): void {
-
     if (this.loginForm.valid){
       const {email, password } = this.loginForm.value;
+
       this.authService.login(email, password).subscribe({
         next: () => {
           this.router.navigate(['/home']);
         },
-        error: (err => {
+        error: (err) => {
           console.log('Login failed', err);
-        })
-      })
-        
 
-        this.markFormGroupTouched();
+          this.markFormGroupTouched();
+        }
+      });
       }
     }
-  }
 
-  private markFormGroupTouched(): void {
+   private markFormGroupTouched(): void {
     Object.keys(this.loginForm.controls).forEach(key => {
       const control = this.loginForm.get(key);
-      control?.markAsTouched();
+      control?.markAsTouched;
     })
-  }
+   }
 }
 
 
