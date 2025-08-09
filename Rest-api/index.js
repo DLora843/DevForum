@@ -1,28 +1,10 @@
-global.__basedir = __dirname;
-require('dotenv').config()
-const dbConnector = require('./config/db');
-// const mongoose = require('mongoose');
-const apiRouter = require('./router');
-const cors = require('cors');
-// const config = require('./config/config');
-const { errorHandler } = require('./utils');
+const express = require('express');
+const app = express();
 
-dbConnector()
-  .then(() => {
-    const config = require('./config/config');
+const PORT = process.env.PORT || 3000;
 
-    const app = require('express')();
-    require('./config/express')(app);
+// ... друг код (middlewares, маршрути и т.н.)
 
-    app.use(cors({
-      origin: config.origin,
-      credentials: true
-    }));
-
-    app.use('/api', apiRouter);
-
-    app.use(errorHandler);
-
-    app.listen(config.port, console.log(`Listening on port ${config.port}!`));
-  })
-  .catch(console.error);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
