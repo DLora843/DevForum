@@ -1,25 +1,47 @@
-nav {
-  background-color: #2c3e50; 
-  padding: 10px 20px;
+.main-nav {
   display: flex;
-  gap: 15px;
   align-items: center;
+  justify-content: space-between; /* Лого в ляво, меню и бутони в дясно */
+  padding: 10px 20px;
+  background-color: #f5f5f5;
 }
 
-nav a {
-  color: white; 
+.logo img {
+  height: 100px;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* разстояние между линковете */
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li a {
   text-decoration: none;
-  font-weight: 600;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  color: #333;
+  font-weight: 500;
 }
 
-nav a:hover {
-  background-color: #34495e; 
+.menu-list li a.active {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
 }
 
-nav a.active {
-  background-color: #1abc9c; 
+.auth-buttons {
+  margin-left: 20px;
+}
+
+.logout-btn {
+  padding: 6px 12px;
+  background-color: #e74c3c;
+  border: none;
   color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
 }

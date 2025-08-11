@@ -98,12 +98,12 @@
 }
 
 .button-container button[type="submit"]:disabled{
-    background-color: #6c757d;
+    background-color: #28a745;
     cursor: not-allowed;
 }
 
 .button-container button[type="button"]{
-    background-color: #6c757d;
+    background-color: #dc3545;
     color: white;
 }
 
@@ -125,4 +125,43 @@
 
 .edit-button:hover{
     background-color: #0056b3;
+}
+
+.cancel-button {
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    background-color: #dc3545; /* червено */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cancel-button:hover {
+    background-color: #a71d2a; /* по-тъмно червено при hover */
+}
+
+
+.save-button {
+    margin-top: 2rem;
+    padding: 0.75rem 2rem;
+    background-color: #28a745; /* зелено */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.save-button:hover {
+    background-color: #1e7e34; /* по-тъмно зелено при hover */
+}
+
+.save-button:disabled {
+    background-color: #a9d5b1; /* по-бледо зелено */
+    cursor: not-allowed;
+    opacity: 0.7;
 }

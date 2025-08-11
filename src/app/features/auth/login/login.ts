@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { AuthService } from '../../core/services';
+import { AuthService } from '../../../core/services';
 import { Router, RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 
@@ -81,11 +81,11 @@ export class Login {
     }
 
    private markFormGroupTouched(): void {
-    Object.keys(this.loginForm.controls).forEach(key => {
-      const control = this.loginForm.get(key);
-      control?.markAsTouched;
-    })
-   }
+  Object.keys(this.loginForm.controls).forEach(key => {
+    const control = this.loginForm.get(key);
+    control?.markAsTouched();  // извикване на метода с ()
+  });
+}
 }
 
 

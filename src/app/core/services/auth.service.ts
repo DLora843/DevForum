@@ -15,11 +15,13 @@ export class AuthService {
     public currentUser = this._currentUser.asReadonly();
     
     constructor(private httpClient: HttpClient) {
-        const savedUser = localStorage.getItem('currentUser');
-        if(savedUser) {
+        if (typeof window !== 'undefined') {
+            const savedUser = localStorage.getItem('currentUser');
+            if(savedUser) {
             const user = JSON.parse(savedUser);
             this._currentUser.set(user);
             this._isLoggedIn.set(true);
+        }
         }
     }
 
