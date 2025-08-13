@@ -1,0 +1,84 @@
+form.contact {
+    max-width: 400px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rbga(0, 0, 0, 0.1);
+}
+
+.field {
+    display: flex;
+    align-items: center;
+}
+
+.field-icon span {
+    margin-right: 8px;
+    color: #555;
+}
+
+input, textarea {
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.input-error {
+    border: 1px solid red;
+}
+
+.input-valid {
+    border: 1px solid green;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 0.25rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+p.text-center {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+p.text-center a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+p.text-center a:hover {
+    text-decoration: underline;
+}

@@ -69,11 +69,12 @@ export class Login {
 
       this.authService.login(email, password).subscribe({
         next: () => {
+          alert('You are now logged in!');
           this.router.navigate(['/home']);
         },
         error: (err) => {
           console.log('Login failed', err);
-
+          alert('Login failed! Please check your email and password.');
           this.markFormGroupTouched();
         }
       });

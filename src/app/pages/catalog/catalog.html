@@ -1,10 +1,16 @@
 <div class="catalog-container">
-    <h2>Каталог с теми</h2>
-    <ul class="catalog-list">
-        <li class="catalog-item" (click)="goToDetails(item.id)" *ngFor="let item of items">
-            <h3> {{ item.title }}</h3>
-            <p>{{ item.content}}</p>
-            <small>{{ item.date}}</small>
-        </li>
-    </ul>
+  <h2>Каталог с теми</h2>
+  <ul class="catalog-list">
+    <li class="catalog-item" *ngFor="let item of items">
+      <!-- Картинка на публикацията, fallback ако няма зададена -->
+       <img src="images.png" />
+
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.content }}</p>
+      <small>{{ item.date }}</small>
+
+      <!-- Бутон за детайлите -->
+      <button (click)="goToDetails(item.id)" class="details-button">Виж детайлите</button>
+    </li>
+  </ul>
 </div>

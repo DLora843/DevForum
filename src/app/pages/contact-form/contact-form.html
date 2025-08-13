@@ -1,0 +1,49 @@
+<form class="contact" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <h2>Contact Us</h2>
+
+  <!-- Name field -->
+  <div class="field field-icon">
+    <span><i class="fas fa-user"></i></span>
+    <input 
+      type="text" 
+      placeholder="Your Name" 
+      formControlName="name"
+      [class.input-error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+      [class.input-valid]="contactForm.get('name')?.valid && contactForm.get('name')?.touched">
+  </div>
+  <div class="error" [class.visible]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+    {{ nameErrorMessage }}
+  </div>
+
+  <!-- Email field -->
+  <div class="field field-icon">
+    <span><i class="fas fa-envelope"></i></span>
+    <input 
+      type="email" 
+      placeholder="Your Email" 
+      formControlName="email"
+      [class.input-error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+      [class.input-valid]="contactForm.get('email')?.valid && contactForm.get('email')?.touched">
+  </div>
+  <div class="error" [class.visible]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+    {{ emailErrorMessage }}
+  </div>
+
+  <!-- Message field -->
+  <div class="field">
+    <textarea 
+      placeholder="Your Message" 
+      formControlName="message"
+      [class.input-error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+      [class.input-valid]="contactForm.get('message')?.valid && contactForm.get('message')?.touched"></textarea>
+  </div>
+  <div class="error" [class.visible]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+    {{ messageErrorMessage }}
+  </div>
+
+  <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+
+  <p class="text-center">
+    Have an account? <a routerLink="/login">Login</a>
+  </p>
+</form>

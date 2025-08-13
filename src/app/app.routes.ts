@@ -40,4 +40,9 @@ export const routes: Routes = [
     loadComponent: () => import('./user/profile/profile').then(c => c.Profile),
     data: { animation: 'ProfilePage'}
   },
+  {
+    path: 'contact',
+    loadComponent: () => import('./pages/contact-form/contact-form').then(c => c.ContactForm),
+    data: { animation: 'ContactPage'}
+  },
 ];
