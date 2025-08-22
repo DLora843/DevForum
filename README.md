@@ -1,59 +1,64 @@
-# Devforum
+# DevForum
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
+## Описание
+DevForum е модерна уеб платформа, предназначена за разработчици, които търсят място за обмен на знания, идеи и опит в областта на програмирането и технологиите. Платформата предлага разнообразие от функционалности, включително форуми, блогове и ресурси за обучение, които помагат на потребителите да подобрят своите умения и да останат в крак с последните тенденции в индустрията.
 
-## Development server
+## Основни функции
+### Форуми
+- **Категории и подкатегории**: Структурирани по начин, който позволява лесно навигиране и намиране на подходящи дискусии.
+- **Търсене и филтриране**: Мощни инструменти за търсене и филтриране на съдържание, което улеснява намирането на конкретна информация.
+- **Модерация**: Система за модериране, която гарантира спазването на правилата и осигурява безопасна и приятелска среда за всички потребители.
 
-To start a local development server, run:
+### Блогове
+- **Публикуване на статии**: Потребителите могат да създават и публикуват свои собствени статии, новини и ръководства.
+- **Коментари и оценки**: Възможност за оставяне на коментари и оценяване на публикациите, което стимулира активното участие и обратна връзка.
+- **Споделяне**: Лесен начин за споделяне на публикации в социални мрежи и други платформи.
 
-```bash
-ng serve
-```
+### Ресурси за обучение
+- **Уроци и ръководства**: Подробни уроци и ръководства, покриващи широк спектър от теми – от основи на програмирането до напреднали техники.
+- **Примери за код**: Примери за код, които демонстрират най-добрите практики и решения на често срещани проблеми.
+- **Интерактивни курсове**: Интерактивни курсове, които позволяват на потребителите да учат чрез практика и упражнения.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Профили на потребители
+- **Лични профили**: Всеки потребител има собствен профил, където може да добавя информация за себе си, своите интереси и постижения.
+- **Следене и абонаменти**: Възможност за следене на други потребители и абониране за техните публикации и активности.
+- **Съобщения**: Частна система за съобщения, която позволява директна комуникация между потребителите.
 
-## Code scaffolding
+## Инсталация
+### Предварителни изисквания
+- Node.js (версия 16 или по-нова)
+- npm (включен в Node.js инсталацията)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Стъпки за инсталация
+1. Клонирайте репозитория:
+   ```sh
+   git clone https://github.com/DLora843/DevForum.git
+   cd DevForum
+   Инсталирайте зависимостите:
+npm install
+Стартирайте сървъра:
+npm start
+Контрибуция
+Ние приветстваме всякакви предложения за подобрения и нови функции. Ако искате да допринесете, следвайте тези стъпки:
 
-```bash
-ng generate component component-name
-```
+Форкирайте репозитория:
+git fork https://github.com/DLora843/DevForum
+Клонирайте форка:
+git clone your-fork-url
+cd DevForum
+Създайте нов клон:
+git checkout -b my-feature
+Направете вашите промени.
+Комитете промените си:
+git add .
+git commit -m "Add some feature"
+Пуснете pull request към main или develop:
+git push origin my-feature
+Лиценз
+Този проект е лицензиран под MIT License. Вижте файла LICENSE за повече информация.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Свържете се с нас
+Ако имате въпроси или нужда от помощ, можете да се свържете с нас на example@devforum.com или чрез нашия Discord сървър: Discord Link.
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Поддръжка
+За съобщаване на бъгове или заявки за нови функции, моля използвайте GitHub Issues.
