@@ -5,6 +5,7 @@ import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModu
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   imports: [ReactiveFormsModule, FormsModule, RouterLink],
   templateUrl: './login.html',
   styleUrl: './login.css'
@@ -69,12 +70,11 @@ export class Login {
 
       this.authService.login(email, password).subscribe({
         next: () => {
-          alert('You are now logged in!');
           this.router.navigate(['/home']);
         },
         error: (err) => {
           console.log('Login failed', err);
-          alert('Login failed! Please check your email and password.');
+
           this.markFormGroupTouched();
         }
       });
@@ -82,11 +82,11 @@ export class Login {
     }
 
    private markFormGroupTouched(): void {
-  Object.keys(this.loginForm.controls).forEach(key => {
-    const control = this.loginForm.get(key);
-    control?.markAsTouched();  // извикване на метода с ()
-  });
-}
+    Object.keys(this.loginForm.controls).forEach(key => {
+      const control = this.loginForm.get(key);
+      control?.markAsTouched;
+    })
+   }
 }
 
 

@@ -12,12 +12,13 @@ const postSchema = new mongoose.Schema({
     }],
     userId: {
         type: ObjectId,
-        ref: "User"
+        ref: "User",
+        required: true
     },
     themeId: {
         type: ObjectId,
         ref: "Theme"
     },
-}, { timestamps: { createdAt: 'created_at' } });
+}, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } });
 
 module.exports = mongoose.model('Post', postSchema);

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Highlight } from '../../shared/highlight';
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [RouterLink, CommonModule, Highlight],
   templateUrl: './home.html',
   styleUrl: './home.css'

@@ -1,5 +1,16 @@
-const authCookieName = 'auth-cookie';
+const env = process.env.NODE_ENV || 'development';
 
-module.exports = {
-    authCookieName,
-}
+const config = {
+    development: {
+        port: process.env.PORT || 3000,
+        dbURL: 'mongodb+srv://davidovalora05:tzP07VqHirsoOCRy@cluster0.ed6o3p3.mongodb.net/forum?retryWrites=true&w=majority',
+        origin: ['http://localhost:5555', 'http://localhost:4200']
+    },
+    production: {
+        port: process.env.PORT || 3000,
+        dbURL: process.env.DB_URL_CREDENTIALS,  // Тук ще идва от .env
+        origin: []
+    }
+};
+
+module.exports = config[env];

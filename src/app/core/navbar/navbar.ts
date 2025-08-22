@@ -2,6 +2,7 @@ import { Component, inject} from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../services';
+
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -10,15 +11,20 @@ import { AuthService } from '../services';
   styleUrl: './navbar.css'
 })
 export class Navbar {
-private authService = inject(AuthService);
+public authService = inject(AuthService);
 private router = inject(Router);
 
-get isLoggedIn() : boolean {
+get loggedIn() : boolean {
   return this.authService.isLoggedIn();
 }
 
+get currentUserName(): string | null {
+  return this.authService.currentUser()?.username || '';
+}
+
 logout(): void {
-  this.authService.logout();
-  this.router.navigate(['/home']);
+  this.authService.logout().subscribe(() => {
+  this.router.navigate(['/home']); 
+  });
 }
 }

@@ -4,16 +4,19 @@
   justify-content: space-between; /* Лого в ляво, меню и бутони в дясно */
   padding: 10px 20px;
   background-color: #4169e1;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .logo img {
-  height: 100px;
+  height: 80px;
+  width: auto;
 }
 
 .menu-list {
   list-style: none;
   display: flex;
-  gap: 15px; /* разстояние между линковете */
+  gap: 20px; /* разстояние между линковете */
   margin: 0;
   padding: 0;
 }
@@ -22,6 +25,7 @@
   text-decoration: none;
   color: white;
   font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
 }
 
 .menu-list li a.active {
@@ -29,6 +33,16 @@
   border-bottom: 2px solid #007bff;
 }
 
+.auth-status {
+  margin-left: 15px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.auth-status span:first-child{
+  color: white;
+  font-weight: 600;
+}
 .auth-buttons {
   margin-left: 20px;
 }
@@ -40,8 +54,12 @@
   color: white;
   cursor: pointer;
   border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .logout-btn:hover {
   background-color: #c0392b;
+  transform: scale(1.05);
 }
+
+

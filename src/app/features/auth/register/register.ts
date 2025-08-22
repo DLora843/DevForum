@@ -15,7 +15,9 @@ export class Register implements AfterViewInit {
   private formBuilder = inject(FormBuilder);
 
   registerForm: FormGroup;
-  
+  passwordMatchValidator: any;
+  markFormGroupTouched: any;
+
   constructor() {
     this.registerForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(5)]],
@@ -114,7 +116,7 @@ export class Register implements AfterViewInit {
 
   get rePasswordErrorMessage(): string {
     if (this.password?.errors?.['required']) {
-      return 'RePassword is required!';
+      return 'Password is required!';
     }
 
     if (this.password?.errors?.['minlength']) {
@@ -150,30 +152,5 @@ export class Register implements AfterViewInit {
           }
         })
     }
-  }
-
-  private markFormGroupTouched(): void {
-    Object.keys(this.registerForm.controls).forEach(key => {
-      const control = this.registerForm.get(key);
-      if (control instanceof FormGroup) {
-        Object.keys(control.controls).forEach(nestedKey => {
-          const nestedControl = control.get(nestedKey)
-          nestedControl?.markAllAsTouched();
-        })
-      } else {
-        control?.markAsTouched();
-      }
-    })
-  }
-
-  private passwordMatchValidator(passwordsControl: AbstractControl): ValidationErrors | null {
-    const password = passwordsControl.get('password');
-    const rePassword = passwordsControl.get('rePassword');
-
-    if (password && rePassword && password.value !== rePassword.value) {
-      return { passwordMismatch: true };
-    }
-
-    return null;
   }
 }

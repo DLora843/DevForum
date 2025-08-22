@@ -6,15 +6,25 @@
     <li><a routerLink="/home">Начало</a></li>
     <li><a routerLink="/catalog">Каталог</a></li>
 
-    <li><a routerLink="/create">Създай Тема</a></li>
-    <li><a routerLink="/profile">Профил</a></li>
+    <!-- Само за логнати -->
+    <li><a routerLink="/create" *ngIf="loggedIn">Създай Тема</a></li>
+    <li><a routerLink="/profile" *ngIf="loggedIn">Профил</a></li>
 
-    <li><a routerLink="/login">Вход</a></li>
-    <li><a routerLink="/register">Регистрация</a></li>
+    <!-- Само за гости -->
+    <li><a routerLink="/login" *ngIf="!loggedIn">Вход</a></li>
+    <li><a routerLink="/register" *ngIf="!loggedIn">Регистрация</a></li>
 
     <li><a routerLink="/contact">Контакт</a></li>
   </ul>
-  <div class="auth-buttons">
-    <button class="logout-btn" (click)="logout()">Изход</button>
+
+  <!-- Статус на потребителя -->
+   <div class="auth-status">
+    <span *ngIf="loggedIn">Добре дошли, {{ currentUserName }}!</span>
+    <span *ngIf="!loggedIn">Не сте влезли в системата</span>
+   </div>
+
+   <!-- Logout бутон-->
+  <div class="auth-buttons" *ngIf="loggedIn">
+    <button class="logout-btn" (click)="logout()">Log Out</button>
   </div>
 </nav>

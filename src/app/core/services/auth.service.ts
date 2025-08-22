@@ -1,8 +1,8 @@
 import { Injectable, signal } from "@angular/core";
-import { ApiUser, User } from "../../models";
 import { HttpClient } from "@angular/common/http";
+import { ToastrService } from "ngx-toastr";
 import { map, Observable, tap} from "rxjs";
-
+import { ApiUser, User } from "../../models";
 @Injectable({
     providedIn: 'root'
 })
@@ -10,11 +10,10 @@ export class AuthService {
     private apiUrl = 'http://localhost:3000/api';
     private _isLoggedIn = signal<boolean>(false);
     private _currentUser = signal<User | null>(null);
-
     public isLoggedIn = this._isLoggedIn.asReadonly();
     public currentUser = this._currentUser.asReadonly();
     
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient, private toastr: ToastrService) {
         if (typeof window !== 'undefined') {
             const savedUser = localStorage.getItem('currentUser');
             if(savedUser) {
@@ -34,6 +33,7 @@ export class AuthService {
                 this._currentUser.set(user);
                 this._isLoggedIn.set(true);
                 localStorage.setItem('currentUser', JSON.stringify(user));
+                this.toastr.success(`Добре дошъл, ${user.username}!`, 'Вход успешен');
             })
         );
     }
