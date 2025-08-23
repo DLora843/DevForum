@@ -2,8 +2,7 @@
   <h2>Каталог с теми</h2>
   <ul class="catalog-list">
     <li class="catalog-item" *ngFor="let item of items">
-      <!-- Картинка на публикацията, fallback ако няма зададена -->
-       <img src="images.png" />
+       <img [src]="item.image" alt="{{ item.title }}" class="item-image">
 
       <h3>{{ item.title }}</h3>
       <small>{{ item.date }}</small>

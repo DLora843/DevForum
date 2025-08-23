@@ -20,36 +20,42 @@ export class Catalog {
       title:'Как да използваме Angular Router?',
       author:'Иван Младенов',
       date:'2025-07-18',
+      image: '/images.png'
     },
     {
       id:'2',
       title:'10 съвета за по-добър TypeScript код',
       author:'Мария Георгиева',
-      date:'2025-07-19'
+      date:'2025-07-19',
+      image: '/ts.png'
 
     },
     {
       id:'3',
       title:'Как да подобрим производителността на Angular приложение',
       author:'Георги Стоянов',
-      date:'2025-07-20'
+      date:'2025-07-20',
+      image: '/angular.png'
     },
     {
       id:'4',
       title:'React срещу Angular - кое да изберем?',
       author:'Светослав Димитров',
-      date:'2025-07-18'
+      date:'2025-07-18',
+      image: '/react.jpg'
     },
     {
       id:'5',
       title:'Какво ново в ES2025',
       author:'Николай Колев',
-      date:'2025-07-18'
+      date:'2025-07-18',
+      image: '/es.png'
     },
     {
       id:'6',
       title:'5 често срещани грешки в JavaScript',
       author:'Елена Иванова',
+      image: '/es.jpg',
       date:'2025-07-18'
     },
   ];

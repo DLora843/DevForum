@@ -1,49 +1,41 @@
-<form class="contact" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-  <h2>Contact Us</h2>
+<div class="contact-container">
+  <h2>Свържете се с нас</h2>
+  
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <!-- Име -->
+    <div class="form-group">
+      <label for="name">Име</label>
+      <input id="name" type="text" formControlName="name" placeholder="Въведете вашето име">
+      <small *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+        Името е задължително (мин. 2 символа).
+      </small>
+    </div>
 
-  <!-- Name field -->
-  <div class="field field-icon">
-    <span><i class="fas fa-user"></i></span>
-    <input 
-      type="text" 
-      placeholder="Your Name" 
-      formControlName="name"
-      [class.input-error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
-      [class.input-valid]="contactForm.get('name')?.valid && contactForm.get('name')?.touched">
-  </div>
-  <div class="error" [class.visible]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
-    {{ nameErrorMessage }}
-  </div>
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Имейл</label>
+      <input id="email" type="email" formControlName="email" placeholder="example@mail.com">
+      <small *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+        Въведете валиден имейл.
+      </small>
+    </div>
 
-  <!-- Email field -->
-  <div class="field field-icon">
-    <span><i class="fas fa-envelope"></i></span>
-    <input 
-      type="email" 
-      placeholder="Your Email" 
-      formControlName="email"
-      [class.input-error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
-      [class.input-valid]="contactForm.get('email')?.valid && contactForm.get('email')?.touched">
-  </div>
-  <div class="error" [class.visible]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
-    {{ emailErrorMessage }}
-  </div>
+    <!-- Subject -->
+    <div class="form-group">
+      <label for="subject">Тема</label>
+      <input id="subject" type="text" formControlName="subject" placeholder="Относно...">
+    </div>
 
-  <!-- Message field -->
-  <div class="field">
-    <textarea 
-      placeholder="Your Message" 
-      formControlName="message"
-      [class.input-error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
-      [class.input-valid]="contactForm.get('message')?.valid && contactForm.get('message')?.touched"></textarea>
-  </div>
-  <div class="error" [class.visible]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
-    {{ messageErrorMessage }}
-  </div>
+    <!-- Message -->
+    <div class="form-group">
+      <label for="message">Съобщение</label>
+      <textarea id="message" rows="5" formControlName="message" placeholder="Вашето съобщение"></textarea>
+      <small *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+        Съобщението трябва да е поне 10 символа.
+      </small>
+    </div>
 
-  <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
-
-  <p class="text-center">
-    Have an account? <a routerLink="/login">Login</a>
-  </p>
-</form>
+    <!-- Submit -->
+    <button type="submit" [disabled]="contactForm.invalid">Изпрати</button>
+  </form>
+</div>
